@@ -1,0 +1,31 @@
+{% extends "existencias/base.html"%}
+
+{% block contenido %}
+
+<table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for venta in ventas %}
+        <tr>
+            <td>{{venta.id}}</td>
+            <td>{{ venta.cliente}}</td>
+            <td>{{venta.producto}}</td>
+            <td>{{venta.cantidad}}</td>
+            <td>{{venta.precio}}</td>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+{% endblock contenido%}

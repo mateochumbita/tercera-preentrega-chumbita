@@ -1,0 +1,24 @@
+{% extends "existencias/base.html"%}
+
+{% block contenido%}
+
+<table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for stock in stocks %}
+        <tr>
+            <td>{{stock.id}}</td>
+            <td>{{ stock.producto}}</td>
+            <td>{{stock.cantidad}}</td>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido%}

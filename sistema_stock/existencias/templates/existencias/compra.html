@@ -1,0 +1,31 @@
+{% extends "existencias/base.html"%}
+
+{% block contenido %}
+
+<table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Proveedor</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Monto</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for compra in compras %}
+        <tr>
+            <td>{{compra.id}}</td>
+            <td>{{compra.proveedor}}</td>
+            <td>{{ compra.producto}}</td>
+            <td>{{compra.cantidad}}</td>
+            <td>{{compra.monto}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+
+{% endblock contenido%}

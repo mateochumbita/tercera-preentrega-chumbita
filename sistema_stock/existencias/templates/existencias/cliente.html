@@ -1,0 +1,28 @@
+{% extends "existencias/base.html"%}
+
+{% block contenido %}
+<table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for cliente in clientes %}
+        <tr>
+            <td>{{cliente.id}}</td>
+            <td>{{cliente.nombre}}</td>
+            <td>{{ cliente.direccion}}</td>
+            <td>{{cliente.telefono}}</td>
+            <td>{{cliente.email}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock contenido%}
+

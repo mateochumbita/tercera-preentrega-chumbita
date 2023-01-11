@@ -1,0 +1,30 @@
+{% extends "existencias/base.html"%}
+
+{% block contenido %}
+
+<table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Rubro</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for proveedor in proveedores %}
+        <tr>
+            <td>{{proveedor.id}}</td>
+            <td>{{proveedor.nombre}}</td>
+            <td>{{proveedor.rubro}}</td>
+            <td>{{ proveedor.direccion}}</td>
+            <td>{{proveedor.telefono}}</td>
+            <td>{{proveedor.email}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock contenido%}
