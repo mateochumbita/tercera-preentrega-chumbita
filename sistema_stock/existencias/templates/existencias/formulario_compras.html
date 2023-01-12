@@ -1,0 +1,15 @@
+{% extends "existencias/base.html" %}
+{% block subtitulo%}Crear Compra{% endblock subtitulo %}
+
+{% block contenido %}
+<h1>Crea tu compra</h1>
+<br>
+<div class="input-group mb-3" style="box-sizing: border-box;">
+  <form action="{% url 'crear_compra' %}" method="post">
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    <input type="submit" value="Enviar" class="form-control"/>
+  </form>
+</div>
+
+{% endblock contenido %}

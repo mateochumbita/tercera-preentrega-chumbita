@@ -1,0 +1,15 @@
+{% extends "existencias/base.html" %}
+{% block subtitulo%}Crear Stock{% endblock subtitulo %}
+
+{% block contenido %}
+<h1>Actualiza el Stock</h1>
+<br>
+<div class="input-group mb-3" style="box-sizing: border-box;">
+  <form action="{% url 'crear_stock' %}" method="post">
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    <input type="submit" value="Enviar" class="form-control"/>
+  </form>
+</div>
+
+{% endblock contenido %}

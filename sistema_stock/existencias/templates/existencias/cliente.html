@@ -1,6 +1,9 @@
 {% extends "existencias/base.html"%}
+{% block subtitulo%}Clientes {% endblock subtitulo %}
 
 {% block contenido %}
+
+<h1>A continucacion el detalle de tus clientes</h1>
 <table class="table table-success table-striped">
     <thead>
       <tr>
@@ -23,6 +26,8 @@
         {% endfor %}
     </tbody>
 </table>
+
+<a href="{% url 'crear_cliente' %}"><i class="bi bi-file-earmark-plus"></i>Añadir Cliente</a>
 
 {% endblock contenido%}
 

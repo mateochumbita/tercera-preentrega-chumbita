@@ -1,0 +1,14 @@
+{% extends "existencias/base.html" %}
+{% block subtitulo%}Buscar Proveedor{% endblock subtitulo %}
+
+{% block contenido %}
+
+<div class="input-group mb-3" style="box-sizing: border-box;">
+  <form action="{% url 'crear_venta' %}" method="post">
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    <input type="submit" value="Enviar" class="form-control"/>
+  </form>
+</div>
+
+{% endblock contenido %}

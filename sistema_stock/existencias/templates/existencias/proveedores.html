@@ -1,6 +1,19 @@
 {% extends "existencias/base.html"%}
+{% block subtitulo%}Proveedores {% endblock subtitulo %}
+{% block buscar %}  
+<div class="input-group mb-3" style="box-sizing: border-box;">
+  <form action="{% url 'buscar_proveedores' %}" method="post" class="d-flex" role="search" style="display: flex;">
+      {% csrf_token %}
+      <input type="text" name="busqueda" placeholder="Ingresa Proveedor" class="form-control me-2">
+      <input type="submit" value="Buscar" class="btn btn-outline-success">
+    </form>
+    <br>
+
+</div>
+{% endblock buscar%}
 
 {% block contenido %}
+<h1>A continucacion el detalle de tus proveedores</h1>
 
 <table class="table table-success table-striped">
     <thead>
@@ -14,17 +27,24 @@
       </tr>
     </thead>
     <tbody>
-        {% for proveedor in proveedores %}
+      {% for proveedor in proveedores %}
         <tr>
-            <td>{{proveedor.id}}</td>
+          
+            <th> {{proveedor.id}} </th>
             <td>{{proveedor.nombre}}</td>
             <td>{{proveedor.rubro}}</td>
             <td>{{ proveedor.direccion}}</td>
             <td>{{proveedor.telefono}}</td>
-            <td>{{proveedor.email}}</td>
-        </tr>
-        {% endfor %}
+            <td>{{proveedor.email}}</td>  
+            
+        </tr> 
+        {% endfor %} 
     </tbody>
 </table>
+
+
+<a href="{% url 'crear_proveedor' %}"><i class="bi bi-file-earmark-plus"></i>Añadir Proveedor</a>
+
+
 
 {% endblock contenido%}

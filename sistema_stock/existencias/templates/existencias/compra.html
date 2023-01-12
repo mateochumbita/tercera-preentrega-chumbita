@@ -1,6 +1,8 @@
 {% extends "existencias/base.html"%}
+{% block subtitulo%}Compras {% endblock subtitulo %}
 
 {% block contenido %}
+<h1>A continucacion el detalle de tus compras</h1>
 
 <table class="table table-success table-striped">
     <thead>
@@ -25,7 +27,7 @@
     </tbody>
 </table>
 
-
+<a href="{% url 'crear_compra' %}"><i class="bi bi-file-earmark-plus"></i>Añadir Compra</a>
 
 
 {% endblock contenido%}

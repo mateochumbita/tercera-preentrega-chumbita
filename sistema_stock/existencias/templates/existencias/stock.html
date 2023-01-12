@@ -1,6 +1,8 @@
 {% extends "existencias/base.html"%}
+{% block subtitulo%}Stock {% endblock subtitulo %}
 
 {% block contenido%}
+<h1>A continucacion el detalle de tu stock</h1>
 
 <table class="table table-success table-striped">
     <thead>
@@ -15,10 +17,11 @@
         <tr>
             <td>{{stock.id}}</td>
             <td>{{ stock.producto}}</td>
-            <td>{{stock.cantidad}}</td>
-            
+            <td>{{stock.cantidad}}</td>   
         </tr>
         {% endfor %}
     </tbody>
 </table>
+
+<a href="{% url 'crear_stock' %}"><i class="bi bi-file-earmark-plus"></i>Actualiza el Stock</a>
 {% endblock contenido%}
