@@ -1,0 +1,15 @@
+# Python
+*.pyc
+build/
+dist/
+venv/
+.cache/
+.pytest_cache/
+pygsheets.egg-info/
+.pytest_cache/
+
+# Other
+.DS_Store
+.coverage
+Footer
+© 2023 GitHub, Inc.
