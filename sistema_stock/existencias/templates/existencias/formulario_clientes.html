@@ -1,6 +1,7 @@
 {% extends "existencias/base.html" %}
 {% block subtitulo%}Crear Cliente{% endblock subtitulo %}
 
+
 {% block contenido %}
 <h1>Crea Cliente</h1>
 <br>
@@ -8,8 +9,9 @@
   <form action="{% url 'crear_cliente' %}" method="post">
     {% csrf_token %}
     {{ formulario.as_p }}
-    <input type="submit" value="Enviar" class="form-control"/>
+    <input type="submit" value="Enviar" class="btn btn-primary mb-3"/>
   </form>
 </div>
+
 
 {% endblock contenido %}
