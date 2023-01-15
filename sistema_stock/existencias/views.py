@@ -170,3 +170,10 @@ def buscar_proveedores(request):
             template_name='existencias/proveedores.html',
             context=contexto,
         )
+        
+
+def ayuda(request):
+    return render(
+        request=request,
+        template_name='existencias/ayuda.html',
+    )
