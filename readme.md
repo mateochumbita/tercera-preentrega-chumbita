@@ -17,4 +17,8 @@
         python manage.py createsuperuser</li>
     <li>Acceder con user y password via:
          127.0.0.1:8000/admin</li>
+<<<<<<< HEAD
 </ul>
+=======
+</ul>
+>>>>>>> aa508056bcfdf317a8744c5f9af3db3d16618c82
