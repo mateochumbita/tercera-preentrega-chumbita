@@ -1,6 +1,6 @@
 <h1>Proyecto Sistema Stock</h1>
 <ul>
-    <li>instalar proyecto en local</li>
+    <li>Instalar proyecto en local</li>
     <li>Crea una carpeta contenedora madre</li>
     <li>Abre la consola y ubicate en la carpeta madre</li>
     <li>Crea y activa el ambiente virtual</li>
