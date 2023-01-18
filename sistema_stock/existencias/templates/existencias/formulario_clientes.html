@@ -1,15 +1,21 @@
 {% extends "existencias/base.html" %}
 {% block subtitulo%}Crear Cliente{% endblock subtitulo %}
+{% block estilos %}
 
+.formulario{
+  text-align: right;
+}
+
+{% endblock estilos %}
 
 {% block contenido %}
-<h1>Crea Cliente</h1>
+<h1>Alta de Cliente</h1>
 <br>
 <div class="input-group mb-3" style="box-sizing: border-box;">
-  <form action="{% url 'crear_cliente' %}" method="post">
+  <form action="{% url 'crear_cliente' %}" method="post" class="formulario">
     {% csrf_token %}
     {{ formulario.as_p }}
-    <input type="submit" value="Enviar" class="btn btn-primary mb-3"/>
+    <input type="submit" value="Enviar" class="btn btn-primary mb-3" />
   </form>
 </div>
 

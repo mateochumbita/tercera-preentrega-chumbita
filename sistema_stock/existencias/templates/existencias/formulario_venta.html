@@ -1,14 +1,22 @@
 {% extends "existencias/base.html" %}
 {% block subtitulo%}Crear Venta{% endblock subtitulo %}
+{% block estilos %}
+
+.formulario{
+  text-align: right;
+}
+
+{% endblock estilos %}
+
 
 {% block contenido %}
 <style>
 
 </style>
-<h1>Ingresa una Venta</h1>
+<h1>Ingresar Venta</h1>
 <br>
 <div class="input-group mb-3" style="position: relative;" >
-  <form action="{% url 'crear_venta' %}" method="post" 
+  <form action="{% url 'crear_venta' %}" method="post" class="formulario"
   >
     {% csrf_token %}
     {{ formulario.as_p }}

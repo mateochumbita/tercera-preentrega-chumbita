@@ -4,7 +4,7 @@
 <div class="input-group mb-3" style="box-sizing: border-box;">
   <form action="{% url 'buscar_proveedores' %}" method="post" class="d-flex" role="search" style="display: flex;">
       {% csrf_token %}
-      <input type="text" name="busqueda" placeholder="Ingresa Proveedor" class="form-control me-2">
+      <input type="text" name="busqueda" placeholder="Buscar Proveedor" class="form-control me-2">
       <input type="submit" value="Buscar" class="btn btn-outline-success">
     </form>
     <br>
@@ -12,25 +12,29 @@
 </div>
 {% endblock buscar%}
 
-{% block contenido %}
-<h1>A continucacion el detalle de tus proveedores</h1>
 
-<table class="table table-success table-striped">
+{% block estilos %}
+
+{% endblock estilos%}
+
+
+
+{% block contenido %}
+<h1>Detalle de Proveedores</h1>
+
+<table class="table table-dark table-striped">
     <thead>
       <tr>
-        <th scope="col">#</th>
         <th scope="col">Nombre</th>
         <th scope="col">Rubro</th>
-        <th scope="col">Direccion</th>
-        <th scope="col">Telefono</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Télefono</th>
         <th scope="col">Email</th>
       </tr>
     </thead>
     <tbody>
       {% for proveedor in proveedores %}
         <tr>
-          
-            <th> {{proveedor.id}} </th>
             <td>{{proveedor.nombre}}</td>
             <td>{{proveedor.rubro}}</td>
             <td>{{ proveedor.direccion}}</td>
@@ -43,7 +47,7 @@
 </table>
 
 
-<button type="button" class="btn btn-light"><a href="{% url 'crear_proveedor' %}" style="text-decoration: none;" >Añadir Proveedor</a></button>
+<a class="btn btn-primary" href="{% url 'crear_proveedor' %}">Añadir Proveedor</a>
 
 
 

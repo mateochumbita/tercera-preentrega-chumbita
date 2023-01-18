@@ -1,13 +1,28 @@
 {% extends "existencias/base.html"%}
 {% block subtitulo%}Stock {% endblock subtitulo %}
 
-{% block contenido%}
-<h1>A continucacion el detalle de tu stock</h1>
 
-<table class="table table-success table-striped">
+
+{% block estilos %}
+
+
+{% endblock estilos%}
+
+{% block colores %}
+.navbar-brand:visited{
+  color: blue;
+
+}
+
+
+{% endblock colores%}
+
+{% block contenido%}
+<h1>Detalle de Stock</h1>
+
+<table class="table table-dark table-striped">
     <thead>
       <tr>
-        <th scope="col">#</th>
         <th scope="col">Producto</th>
         <th scope="col">Cantidad</th>
       </tr>
@@ -15,7 +30,6 @@
     <tbody>
         {% for stock in stocks %}
         <tr>
-            <td>{{stock.id}}</td>
             <td>{{ stock.producto}}</td>
             <td>{{stock.cantidad}}</td>   
         </tr>
@@ -23,5 +37,5 @@
     </tbody>
 </table>
 
-<button type="button" class="btn btn-light"><a href="{% url 'crear_stock' %}" style="text-decoration: none;" >Actualizar Stock</a></button>
+<a class="btn btn-primary" href="{% url 'crear_stock' %}">Actualizar Stock</a>
 {% endblock contenido%}

@@ -1,23 +1,26 @@
 {% extends "existencias/base.html"%}
 {% block subtitulo%}Ventas {% endblock subtitulo %}
 
-{% block contenido %}
-<h1>A continucacion el detalle de tu stock</h1>
 
-<table class="table table-success table-striped">
+{% block estilos %}
+
+{% endblock estilos%}
+
+{% block contenido %}
+<h1>Detalle de Ventas</h1>
+
+<table class="table table-dark table-striped">
     <thead>
       <tr>
-        <th scope="col">#</th>
         <th scope="col">Cliente</th>
         <th scope="col">Producto</th>
         <th scope="col">Cantidad</th>
-        <th scope="col">Precio</th>
+        <th scope="col">Total</th>
       </tr>
     </thead>
     <tbody>
         {% for venta in ventas %}
         <tr>
-            <td>{{venta.id}}</td>
             <td>{{ venta.cliente}}</td>
             <td>{{venta.producto}}</td>
             <td>{{venta.cantidad}}</td>
@@ -28,7 +31,6 @@
     </tbody>
 </table>
 
-<button type="button" class="btn btn-light"><a href="{% url 'crear_venta' %}" style="text-decoration: none;" >Añadir Venta</a></button>
-
+<a class="btn btn-primary" href="{% url 'crear_venta' %}">Añadir Venta</a>
 
 {% endblock contenido%}

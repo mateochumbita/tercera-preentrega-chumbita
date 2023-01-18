@@ -12,7 +12,7 @@ class CompraFormulario(forms.Form):
     proveedor= forms.CharField(max_length=64)
     producto= forms.CharField(max_length=64)
     cantidad= forms.IntegerField(required=True)
-    monto= forms.IntegerField(required=True)
+    total= forms.IntegerField(required=True)
 
 
 class ClienteFormulario(forms.Form):
@@ -31,7 +31,7 @@ class VentaFormulario(forms.Form):
     cliente= forms.CharField(max_length=64)
     producto= forms.CharField(max_length=64)
     cantidad= forms.IntegerField(required=True)
-    precio= forms.IntegerField(required=True)
+    total= forms.IntegerField(required=True)
     
     
     

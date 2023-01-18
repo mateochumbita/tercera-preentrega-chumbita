@@ -1,23 +1,28 @@
 {% extends "existencias/base.html"%}
 {% block subtitulo%}Compras {% endblock subtitulo %}
 
-{% block contenido %}
-<h1>A continucacion el detalle de tus compras</h1>
 
-<table class="table table-success table-striped">
+
+{% block estilos %}
+
+
+{% endblock estilos%}
+
+{% block contenido %}
+<h1>Detalle de Compras</h1>
+
+<table class="table table-dark table-striped">
     <thead>
       <tr>
-        <th scope="col">#</th>
         <th scope="col">Proveedor</th>
         <th scope="col">Producto</th>
         <th scope="col">Cantidad</th>
-        <th scope="col">Monto</th>
+        <th scope="col">Total</th>
       </tr>
     </thead>
     <tbody>
         {% for compra in compras %}
         <tr>
-            <td>{{compra.id}}</td>
             <td>{{compra.proveedor}}</td>
             <td>{{ compra.producto}}</td>
             <td>{{compra.cantidad}}</td>
@@ -27,7 +32,7 @@
     </tbody>
 </table>
 
-<button type="button" class="btn btn-secondary"><a href="{% url 'crear_compra' %}" style="text-decoration: none;" >Añadir Compra</a></button>
+<a class="btn btn-primary" href="{% url 'crear_compra' %}">Añadir Compra</a>
 
 
 {% endblock contenido%}

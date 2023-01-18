@@ -1,11 +1,19 @@
 {% extends "existencias/base.html" %}
 {% block subtitulo%}Crear Compra{% endblock subtitulo %}
+{% block estilos %}
+
+.formulario{
+  text-align: right;
+}
+
+{% endblock estilos %}
+
 
 {% block contenido %}
-<h1>Crea tu compra</h1>
+<h1>Ingresar Compra</h1>
 <br>
-<div class="input-group mb-3" style="box-sizing: border-box;">
-  <form action="{% url 'crear_compra' %}" method="post">
+<div class="input-group mb-3" style="box-sizing: border-box;" >
+  <form action="{% url 'crear_compra' %}" method="post" class="formulario">
     {% csrf_token %}
     {{ formulario.as_p }}
     <input type="submit" value="Enviar" class="btn btn-primary mb-3"/>

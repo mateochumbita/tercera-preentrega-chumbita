@@ -82,7 +82,7 @@ def crear_compra(request):
 
         if formulario.is_valid():
             data = formulario.cleaned_data
-            compra = Compra(proveedor=data['proveedor'], producto=data['producto'],  cantidad=data['cantidad'], monto=data['monto'])
+            compra = Compra(proveedor=data['proveedor'], producto=data['producto'],  cantidad=data['cantidad'], monto=data['total'])
             compra.save()
             url_exitosa = reverse('compras')
             return redirect(url_exitosa)
@@ -142,7 +142,7 @@ def crear_venta(request):
 
         if formulario.is_valid():
             data = formulario.cleaned_data
-            venta = Venta(cliente=data['cliente'], producto=data['producto'],  cantidad=data['cantidad'], precio=data['precio'])
+            venta = Venta(cliente=data['cliente'], producto=data['producto'],  cantidad=data['cantidad'], precio=data['total'])
             venta.save()
             url_exitosa = reverse('ventas')
             return redirect(url_exitosa)
