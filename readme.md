@@ -1,6 +1,6 @@
 <h1>Proyecto Sistema Stock</h1>
 <ul>
-    <li>instalar proyecto en local</li>
+    <li>Instalar proyecto en local</li>
     <li>Crea una carpeta contenedora madre</li>
     <li>Abre la consola y ubicate en la carpeta madre</li>
     <li>Crea y activa el ambiente virtual</li>
@@ -17,8 +17,3 @@
         python manage.py createsuperuser</li>
     <li>Acceder con user y password via:
          127.0.0.1:8000/admin</li>
-<<<<<<< HEAD
-</ul>
-=======
-</ul>
->>>>>>> aa508056bcfdf317a8744c5f9af3db3d16618c82
